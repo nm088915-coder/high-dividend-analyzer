@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 /* ═══════════════════════════════════════════
-   COLORS & THEME
+   COLORS & THEM
    ═══════════════════════════════════════════ */
 const C = {
   bg: "#0a0a0f", card: "#13131a", cardHover: "#1a1a24", border: "#2a2a3a",
@@ -321,7 +321,7 @@ const PortfolioTab=({onNavigateToAnalysis})=>{
         <table style={{width:"100%",borderCollapse:"collapse",fontSize:12}}>
           <thead><tr style={{background:C.bg}}>
             {["コード","銘柄名","業種","株数","取得単価","現在値","取得金額","評価額","損益","利回り","操作"].map(h=>
-              <th key={h} style={{padding:"8px 10px",textAlign:"left"(color:C.textMuted,fontWeight:600,borderBottom:`1px solid ${C.border}`,whiteSpace:"nowrap"}}>{h}</th>)}
+              <th key={h} style={{padding:"8px 10px",textAlign:"left",color:C.textMuted,fontWeight:600,borderBottom:`1px solid ${C.border}`,whiteSpace:"nowrap"}}>{h}</th>)}
           </tr></thead>
           <tbody>{holdings.map((h,i)=>{const buyAmt=h.shares*h.buyPrice;const curAmt=h.shares*h.currentPrice;const pl=curAmt-buyAmt;const yld=h.currentPrice>0?(h.annualDiv/h.currentPrice*100).toFixed(2):"0";
             return <tr key={i} style={{borderBottom:`1px solid ${C.border}`}} onMouseEnter={e=>e.currentTarget.style.background=C.cardHover} onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
